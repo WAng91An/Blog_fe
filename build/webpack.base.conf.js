@@ -8,8 +8,6 @@ function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
-
-
 module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
@@ -27,6 +25,10 @@ module.exports = {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
+      'stylesPath': resolve('src/assets/styles'),
+      'imgPath': resolve('src/assets/img'),
+      'jsPath': resolve('src/assets/js'),
+      'common': resolve('src/common'),
     }
   },
   module: {

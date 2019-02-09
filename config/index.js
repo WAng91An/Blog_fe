@@ -10,7 +10,14 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+        '/api': { // 作为标识，如果以api开头的url下面的配置就起作用
+            target: 'http://localhost:8087/', // 代理到目标的服务器地址
+            pathRewrite: {
+                '^/api': '' // 拼接之后所有 /api 替换成冒号后面的字符串
+            }
+        }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
