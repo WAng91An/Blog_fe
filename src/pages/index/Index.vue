@@ -1,6 +1,6 @@
 <template>
   <div>
-    <common-header></common-header>
+    <index-header></index-header>
     <container-header :list="list"></container-header>
     <pagination-header @handleList="handleList"></pagination-header>
     <common-footer></common-footer>
@@ -9,14 +9,14 @@
 
 <script>
 import ContainerHeader from './components/Container'
-import CommonHeader from 'common/header/Header'
+import IndexHeader from './components/Header'
 import PaginationHeader from './components/Pagination'
 import CommonFooter from 'common/footer/Footer'
 
 export default {
   name: 'Index',
   components: {
-    CommonHeader,
+    IndexHeader,
     CommonFooter,
     ContainerHeader,
     PaginationHeader

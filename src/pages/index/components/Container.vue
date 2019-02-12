@@ -4,13 +4,13 @@
 	    <div class="row">
 	        <div class="col-lg-10 col-md-10 col-md-offset-1">
 	            <div class="post-item-wrapper"  v-for="item of list" :key="item.id">
-	                <a  :href=" '/blog/' + item.id" class="post-title">
-	                    {{item.title}}
-	                </a>
+	            	<router-link tag="a" :to=" '/blog/' + item.id " class="post-title">
+	            		{{item.title}}
+	                </router-link>
 	                <div class="post-excerpt">
 	                    <!-- Post Date and Categories -->
 	                    <div class="date-and-category">
-	                        <div class="date">{{item.createTime | dataFormat }}</div>
+	                        <div class="date">{{item.createTime | dateFormat }}</div>
 	                        <div class="categories">
 	                            <a href="/categories/coding/">{{item.categoryName}}</a>
 	                        </div>
@@ -44,7 +44,7 @@ export default {
 
   },
   filters: {
-      dataFormat: function (time) {
+      dateFormat: function (time) {
           // 时间格式
           var d = new Date(time)
           var year = d.getFullYear();
